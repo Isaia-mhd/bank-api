@@ -24,7 +24,8 @@ class PretFactory extends Factory
             "nomBanque" => $bank,
             "montant" => $this->faker->randomFloat(2, 5000.00, 1000000.00),
             "taux_de_pret" => $taux,
-            "date_de_pret" => $this->faker->dateTimeBetween('-12 months', 'now')
+            "date_de_pret" => $this->faker->dateTimeBetween('-12 months', 'now'),
+            "totalPayer" => $this->faker->randomFloat(2, 40000.00, 1000000.00)
         ];
     }
 }

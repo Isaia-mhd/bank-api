@@ -13,7 +13,7 @@ class PretController extends Controller
      */
     public function index()
     {
-        $prets = DB::table('prets')->get();
+        $prets = DB::table('prets')->orderBy('created_at', 'DESC')->get();
         return response()->json([
             "prets" => $prets
         ], 200);
@@ -33,8 +33,10 @@ class PretController extends Controller
             "date_de_pret" => "required|date",
         ]);
 
+        $validated["totalPayer"] = $validated["montant"] + (($validated["montant"] * $validated["taux_de_pret"]) /100);
 
-        $pret = Pret::create($request->all());
+
+        $pret = Pret::create($validated);
 
         return response()->json([
             "message" => "Prêt ajouté avec success",

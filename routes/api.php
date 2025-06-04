@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\BilanController;
 use App\Http\Controllers\PretController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
+
+Route::get('bilan', [BilanController::class, 'index']);
 
 Route::delete("prets/delete/{pret}", [PretController::class, "destroy"]);
 Route::put("prets/update/{pret}", [PretController::class, "update"]);
