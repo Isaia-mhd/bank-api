@@ -69,7 +69,10 @@ class PretController extends Controller
             "date_de_pret" => "required|date",
         ]);
 
-        $pret->update($request->all());
+        $validated["totalPayer"] = $validated["montant"] + (($validated["montant"] * $validated["taux_de_pret"]) /100);
+
+
+        $pret->update($validated);
 
         return response()->json([
             "message" => "Prêt mis à jour avec succès.",
