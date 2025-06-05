@@ -72,7 +72,8 @@ class PretController extends Controller
         $pret->update($request->all());
 
         return response()->json([
-            "message" => "Prêt mis à jour avec succès."
+            "message" => "Prêt mis à jour avec succès.",
+            "pret" => $pret
         ]);
     }
 
