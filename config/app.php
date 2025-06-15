@@ -18,6 +18,9 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'admin_email' => env('ADMIN_MAIL','mohamedesaie21@gmail.com'),
+    'admin_password' => env('ADMIN_PASS','123456789'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -83,7 +86,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
