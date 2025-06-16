@@ -13,7 +13,7 @@ class PretController extends Controller
      */
     public function index()
     {
-        $prets = DB::table('prets')->orderBy('created_at', 'DESC')->get();
+        $prets = DB::table('prets')->orderBy('date_de_pret', 'DESC')->get();
         return response()->json([
             "prets" => $prets
         ], 200);
@@ -25,7 +25,7 @@ class PretController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "numeroCompte" => "required|string",
+            "numeroCompte" => "required|digits_between:8,20",
             "nomClient" => "required|string|max:40",
             "nomBanque" => "required",
             "montant" => "required|numeric",
