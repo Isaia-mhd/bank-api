@@ -64,8 +64,8 @@ class PretController extends Controller
             "numeroCompte" => "required|string",
             "nomClient" => "required|string|max:40",
             "nomBanque" => "required",
-            "montant" => "required|numeric",
-            "taux_de_pret" => "required|numeric",
+            "montant" => "required",
+            "taux_de_pret" => "required",
             "date_de_pret" => "required|date",
         ]);
 
